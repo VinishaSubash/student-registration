@@ -1,0 +1,161 @@
+/* --- Simple & Clean Ocean Color Palette --- */
+body {
+    background-color: #f0f4f8; /* Soft blue-gray background */
+    color: #2d3748;            /* Dark slate text for readability */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+}
+
+/* --- Navigation Header --- */
+header {
+    background-color: #1a365d; /* Deep ocean blue */
+    padding: 15px 0;
+}
+
+.nav-container {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.nav-links a {
+    color: #cbd5e0;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: #319795; /* Bright teal highlight */
+}
+
+/* --- Layout Containers --- */
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.welcome-box {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-box {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* --- Form Fields & Labels --- */
+.form-group {
+    margin-bottom: 18px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #4a5568;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="tel"],
+input[type="date"],
+input[type="time"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #cbd5e0;
+    border-radius: 4px;
+    box-sizing: border-box; /* Prevents input fields from stretching out */
+    font-size: 14px;
+}
+
+input:focus, select:focus {
+    border-color: #319795; /* Turns teal when clicked */
+    outline: none;
+}
+
+fieldset {
+    border: 2px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+legend {
+    font-weight: bold;
+    color: #2b6cb0; /* Mid-blue for fieldset titles */
+    padding: 0 5px;
+}
+
+.inline-group {
+    margin-top: 5px;
+}
+
+.inline-group label {
+    display: inline;
+    font-weight: normal;
+    margin-right: 15px;
+}
+
+/* --- Action Buttons --- */
+.btn {
+    background-color: #319795; /* Teal button */
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn:hover {
+    background-color: #2c7a7b; /* Darker teal on hover */
+}
+
+.btn-submit {
+    width: 100%;
+}
+
+/* --- Submitted Data Display (used on inputs.html when arriving from register.html) --- */
+.data-summary {
+    background-color: #e6fffa;
+    border: 2px solid #319795;
+    border-radius: 6px;
+    padding: 15px 20px;
+    margin-bottom: 25px;
+}
+
+.data-summary h3 {
+    margin-top: 0;
+    color: #1a365d;
+}
+
+.data-summary p {
+    margin: 4px 0;
+}

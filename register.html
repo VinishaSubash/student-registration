@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Create Account</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">MyStudentPortal</div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="register.html" class="active">Register</a>
+                <a href="inputs.html">Form Catalog</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="form-box">
+            <h2 style="text-align: center; margin-bottom: 25px;">Create Your Account</h2>
+
+            <form action="inputs.html" method="GET">
+                <div class="form-group">
+                    <label for="user-name">Full Name</label>
+                    <input type="text" id="user-name" name="user-name" placeholder="John Doe" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="user-email">Email Address</label>
+                    <input type="email" id="user-email" name="user-email" placeholder="example@email.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="user-pass">Password</label>
+                    <input type="password" id="user-pass" name="user-pass" placeholder="Enter security password" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Choose Account Role</label>
+                    <div class="inline-group">
+                        <input type="radio" id="role-student" name="user-role" value="student" checked>
+                        <label for="role-student">Student</label>
+
+                        <input type="radio" id="role-guest" name="user-role" value="guest">
+                        <label for="role-guest">Guest User</label>
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin-top: 25px;">
+                    <div class="inline-group">
+                        <input type="checkbox" id="agree-terms" name="agree-terms" required>
+                        <label for="agree-terms">I agree to the portal privacy policy</label>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-submit">Submit

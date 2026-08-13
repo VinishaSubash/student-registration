@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalog - Component Library</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">MyStudentPortal</div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="register.html">Register</a>
+                <a href="inputs.html" class="active">Form Catalog</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <!-- This box only appears if you arrived here from register.html with submitted data -->
+        <div class="form-box" id="submitted-data-box" style="display:none; margin-bottom: 25px;">
+            <div class="data-summary">
+                <h3>Data received from Registration form:</h3>
+                <p id="summary-name"></p>
+                <p id="summary-email"></p>
+                <p id="summary-role"></p>
+                <p id="summary-agree"></p>
+            </div>
+        </div>
+
+        <div class="form-box" style="max-width: 650px;">
+            <h2 style="text-align: center; margin-bottom: 25px;">HTML5 Component Library</h2>
+
+            <form id="component-form">
+
+                <fieldset>
+                    <legend>Contact Information</legend>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="123-456-7890">
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>System Timestamps</legend>
+                    <div class="form-group">
+                        <label for="booking-date">Select Date</label>
+                        <input type="date" id="booking-date" name="booking-date">
+                    </div>
+                    <div class="form-group">
+                        <label for="booking-time">Select Time</label>
+                        <input type="time" id="booking-time" name="booking-time">
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Preferences &amp; Custom Parameters</legend>
+                    <div class="form-group">
+                        <label for="experience">Years of Experience (1-10)</label>
+                        <input type="number" id="experience" name="experience" min="1" max="10" value="1">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="country">Country Region</label>
+                        <select id="country" name="country">
+                            <option value="in">India</option>
+                            <option value="us">United States</option>
+                            <option value="uk">United Kingdom</option>
+                        </select>
+                    </div>
+                </fieldset>
+
+                <div style="text-align: center; margin-top: 25px;">
+                    <button type="submit" class="btn">Test Component Action</button>
+                </div>
+            </form>
+
+            <!-- Shows the values from the component form above once you click the button -->
+            <div class="data-summary" id="component-result-box" style="display:none; margin-top: 20px;">
+                <h3>Component values captured:</h3>
+                <p id="result-phone"></p>
+                <p id="result-date"></p>
+                <p id="result-time"></p>
+                <p id="result-experience"></p>
+                <p id="result-country"></p>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // If this page was opened via register.html's form submission,
+        // the submitted values will be in the URL query string. This just
+        // reads them back out and displays them so you can confirm the
+        // registration form is actually sending data correctly.
+        const params = new URLSearchParams(window.location.search);
+
+        if (params.has("user-name") || params.has("user-email")) {
+            document.getElementById("submitted-data-box").style.display = "block";
+
+            document.getElementById("summary-name").textContent =
+                "Full Name: " + (params.get("user-name") || "-");
+
+            document.getElementById("summary-email").textContent =
+                "Email Address: " + (params.get("user-email") || "-");
+
+            document.getElementById("summary-role").textContent =
+                "Account Role: " + (params.get("user-role") || "-");
+
+            document.getElementById("summary-agree").textContent =
+                "Agreed to Policy: " + (params.has("agree-terms") ? "Yes" : "No");
+        }
+
+        // The component form below has no real server to send data to,
+        // so we stop it from actually submitting (which caused the
+        // "this page isn't working" error) and just display what was
+        // entered instead.
+        document.getElementById("component-form").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            document.getElementById("result-phone").textContent =
+                "Phone: " + (document.getElementById("phone").value || "-");
+
+            document.getElementById("result-date").textContent =
+                "Date: " + (document.getElementById("booking-date").value || "-");
+
+            document.getElementById("result-time").textContent =
+                "Time: " + (document.getElementById("booking-time").value || "-");
+
+            document.getElementById("result-experience").textContent =
+                "Experience: " + document.getElementById("experience").value + " years";
+
+            document.getElementById("result-country").textContent =
+                "Country: " + document.getElementById("country").options[document.getElementById("country").selectedIndex].text;
+
+            document.getElementById("component-result-box").style.display = "block";
+        });
+    </script>
+
+</body>
+</html>
